@@ -7,8 +7,12 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 
 import javax.swing.JButton;
+import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -19,8 +23,14 @@ public class WindowAdd2 extends JFrame implements ActionListener , Runnable, Mou
 	JLabel l1, l2, l3, l4;
 	JTextField t1, t2, t3;
 	JButton b1,b2;
+	JMenuBar op;
+	JMenu ope,ope1;
+	JMenuItem sub,mul,div;
+	JDesktopPane dt;
 
 	public void setcomponent() {
+		dt = new JDesktopPane();
+		setContentPane(dt);
 		l1 = new JLabel("Addition of two number");
 		l1.setForeground(Color.red);
 		l2 = new JLabel("First Number");
@@ -31,6 +41,22 @@ public class WindowAdd2 extends JFrame implements ActionListener , Runnable, Mou
 		t3 = new JTextField();
 		b1 = new JButton("Add");
 		b2 = new JButton("Exit");
+		
+		
+		op = new JMenuBar();
+		ope = new JMenu("Operaion");
+		ope1 = new JMenu("Operaion1");
+		op.add(ope);
+		op.add(ope1);
+		sub = new JMenuItem("Substraction");
+		mul = new JMenuItem("Multiplication");
+		div = new JMenuItem("Divition");
+		sub.addActionListener(this);
+		
+		ope.add(sub);
+		ope.add(mul);
+		ope.add(div);
+		setJMenuBar(op);
 		l1.addMouseMotionListener(this);
 		l2.setToolTipText("Vikash");
 		setLayout(null);
@@ -70,7 +96,7 @@ public class WindowAdd2 extends JFrame implements ActionListener , Runnable, Mou
 		WindowAdd2 window = new WindowAdd2();
 		window.setcomponent();
 		 
-		window.setSize(300, 300);
+		window.setSize(1000, 1000);
 		window.setVisible(true);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
@@ -80,8 +106,6 @@ public class WindowAdd2 extends JFrame implements ActionListener , Runnable, Mou
 		
 		if(e.getSource() == b1)
 		{
-
-
 			double a = 0 ,b = 0,s;
 			try
 			{
@@ -109,6 +133,16 @@ public class WindowAdd2 extends JFrame implements ActionListener , Runnable, Mou
 		if(e.getSource() == b2)
 		{
 			System.exit(0);
+		}
+		
+		if(e.getSource() == sub)
+		{
+			WindowAdd1 test = new WindowAdd1();
+			dt.add(test);
+			try {
+				test.setSelected(true);
+			} catch (java.beans.PropertyVetoException j) {
+			}
 		}
 	}
 
