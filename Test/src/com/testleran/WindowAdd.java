@@ -16,13 +16,6 @@ public class WindowAdd extends JFrame {
 	JTextField t1, t2, t3;
 	JButton b1;
 
-	//public WindowAdd() {
-	//}
-
-	//public WindowAdd(String s) {
-		//super(s);
-	//}
-
 	public void setcomponent() {
 		l1 = new JLabel("Addition of two number");
 		l2 = new JLabel("First Number");

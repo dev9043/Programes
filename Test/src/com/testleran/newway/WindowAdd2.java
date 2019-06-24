@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
+import java.beans.PropertyVetoException;
 
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
@@ -27,12 +28,17 @@ public class WindowAdd2 extends JFrame implements ActionListener , Runnable, Mou
 	JMenu ope,ope1;
 	JMenuItem sub,mul,div;
 	JDesktopPane dt;
+	
+	public WindowAdd2()
+	{
+		System.out.println("");
+	}
 
 	public void setcomponent() {
 		dt = new JDesktopPane();
 		setContentPane(dt);
 		l1 = new JLabel("Addition of two number");
-		l1.setForeground(Color.red);
+		l1.setForeground(Color.green);
 		l2 = new JLabel("First Number");
 		l3 = new JLabel("Second Number");
 		l4 = new JLabel();
@@ -57,11 +63,12 @@ public class WindowAdd2 extends JFrame implements ActionListener , Runnable, Mou
 		ope.add(mul);
 		ope.add(div);
 		setJMenuBar(op);
+		
 		l1.addMouseMotionListener(this);
 		l2.setToolTipText("Vikash");
 		setLayout(null);
 
-		l1.setBounds(50, 50, 200, 20);
+		l1.setBounds(90, 40, 200, 20);
 		l2.setBounds(50, 80, 100, 20);
 		t1.setBounds(150, 80, 100, 20);
 		l3.setBounds(50, 130, 100, 20);
@@ -92,15 +99,6 @@ public class WindowAdd2 extends JFrame implements ActionListener , Runnable, Mou
 		t1.start();
 	}
 	
-	public static void main(String[] args) {
-		WindowAdd2 window = new WindowAdd2();
-		window.setcomponent();
-		 
-		window.setSize(1000, 1000);
-		window.setVisible(true);
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
@@ -137,11 +135,11 @@ public class WindowAdd2 extends JFrame implements ActionListener , Runnable, Mou
 		
 		if(e.getSource() == sub)
 		{
-			WindowAdd1 test = new WindowAdd1();
-			dt.add(test);
+			WindowAdd1 newUser = new WindowAdd1();
+			dt.add(newUser);
 			try {
-				test.setSelected(true);
-			} catch (java.beans.PropertyVetoException j) {
+				newUser.setSelected(true);
+			} catch (PropertyVetoException j) {
 			}
 		}
 	}
@@ -179,5 +177,12 @@ public class WindowAdd2 extends JFrame implements ActionListener , Runnable, Mou
 		}
 		
 	}
-
+	public static void main(String[] args) {
+		WindowAdd2 window = new WindowAdd2();
+		window.setcomponent();
+		 window.setTitle("Window");
+		window.setSize(400, 400);
+		window.setVisible(true);
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
 }

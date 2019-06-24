@@ -1,4 +1,4 @@
-package com.testleran.newway;
+package com.SimpalCalcutator;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,7 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class WindowAdd1 extends JInternalFrame  {
+public class Addition extends JInternalFrame implements ActionListener  {
 
 	private static final long serialVersionUID = 9174064594421645325L;
 
@@ -18,9 +18,10 @@ public class WindowAdd1 extends JInternalFrame  {
 	JTextField t1, t2, t3;
 	JButton b1,b2;
 
-	public  WindowAdd1() {
+	public  Addition() {
 		setSize(300, 300);
 		setVisible(true);
+		setTitle("Addition Windon");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		l1 = new JLabel("Addition of two number");
@@ -30,8 +31,10 @@ public class WindowAdd1 extends JInternalFrame  {
 		t1 = new JTextField();
 		t2 = new JTextField();
 		t3 = new JTextField();
-		b1 = new JButton("Add");
+		b1 = new JButton("Get");
 		b2 = new JButton("Exit");
+		 
+		
 
 		setLayout(null);
 
@@ -44,42 +47,20 @@ public class WindowAdd1 extends JInternalFrame  {
 		t3.setBounds(80, 180, 100, 20);
 		b1.setBounds(60, 220, 80, 20);
 		b2.setBounds(160, 220, 80, 20);
-		
-		b1.addActionListener(new ActionListener() {
+		b1.addActionListener(this);
+		b2.addActionListener(this);
+		/*b1.addActionListener(new ActionListener() {
 			
 			@Override
-			public void actionPerformed(ActionEvent e) {
-
-				double a = 0 ,b = 0,s;
-				try
-				{
-				 a = Double.parseDouble(t1.getText());
-				}
-				catch (NumberFormatException xe)
-				{
-					JOptionPane.showMessageDialog(null, "Please Input only number", "LoginWindow", 0);
-					t1.setText("");
-				}
-				try
-				{
-					 b = Double.parseDouble(t2.getText());
-				}
-				catch (NumberFormatException xe)
-				{
-					JOptionPane.showMessageDialog(null, "Please Input only number", "LoginWindow", 0);
-					t2.setText("");
-				}
-				 s = a + b;
-				l4.setText("Sum = " + s);
-			}
-		});
+			public void actionPerformed(ActionEvent e) {}
+		});*/
 		
-		b2.addActionListener(new ActionListener() {
+		/*b2.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
+			dispose();
 			}
-		});
+		});*/
 
 		add(l1);
 		add(l2);
@@ -90,6 +71,38 @@ public class WindowAdd1 extends JInternalFrame  {
 		add(b2);
 		add(l4);
 		add(t3);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == b1)
+		{
+			double a = 0 ,b = 0,s;
+			try
+			{
+			 a = Double.parseDouble(t1.getText());
+			}
+			catch (NumberFormatException xe)
+			{
+				JOptionPane.showMessageDialog(null, "Please Input only number", "LoginWindow", 0);
+				t1.setText("");
+			}
+			try
+			{
+				 b = Double.parseDouble(t2.getText());
+			}
+			catch (NumberFormatException xe)
+			{
+				JOptionPane.showMessageDialog(null, "Please Input only number", "LoginWindow", 0);
+				t2.setText("");
+			}
+			 s = a + b;
+			l4.setText("Sum = " + s);
+		}
+		if(e.getSource() == b2)
+		{
+			this.dispose();
+		}
 	}
 	
 	/*public static void main(String[] args) {
@@ -102,3 +115,4 @@ public class WindowAdd1 extends JInternalFrame  {
 	}*/
 
 }
+
