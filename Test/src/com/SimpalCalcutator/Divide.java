@@ -1,4 +1,4 @@
-package com.testleran.newway;
+package com.SimpalCalcutator;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,7 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class WindowAdd1 extends JInternalFrame  {
+
+public class Divide extends JInternalFrame  {
 
 	private static final long serialVersionUID = 9174064594421645325L;
 
@@ -18,19 +19,20 @@ public class WindowAdd1 extends JInternalFrame  {
 	JTextField t1, t2, t3;
 	JButton b1,b2;
 
-	public  WindowAdd1() {
+	public  Divide() {
 		setSize(300, 300);
 		setVisible(true);
+		setTitle("Divide");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		l1 = new JLabel("Addition of two number");
+		l1 = new JLabel("Divide of two number");
 		l2 = new JLabel("First Number");
 		l3 = new JLabel("Second Number");
 		l4 = new JLabel();
 		t1 = new JTextField();
 		t2 = new JTextField();
 		t3 = new JTextField();
-		b1 = new JButton("Add");
+		b1 = new JButton("Get");
 		b2 = new JButton("Exit");
 
 		setLayout(null);
@@ -69,7 +71,7 @@ public class WindowAdd1 extends JInternalFrame  {
 					JOptionPane.showMessageDialog(null, "Please Input only number", "LoginWindow", 0);
 					t2.setText("");
 				}
-				 s = a + b;
+				 s = a / b;
 				l4.setText("Sum = " + s);
 			}
 		});
@@ -102,3 +104,4 @@ public class WindowAdd1 extends JInternalFrame  {
 	}*/
 
 }
+
