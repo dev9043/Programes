@@ -1,17 +1,17 @@
 package com.digitalClock;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class WatchThread extends Thread {
 
-	DigitalClock dc;
+	Watch watch;
 	
 	
 	String time;
 	
-	public WatchThread(DigitalClock dc)
+	public WatchThread(Watch watch)
 	{
-		this.dc = dc;
+		this.watch = watch;
 		start();
 	}
 	
@@ -20,7 +20,7 @@ public class WatchThread extends Thread {
 		while(true)
 		{
 			time = ""+new Date();
-			dc.jlabClock.setText(time);
+			watch.jlabClock.setText(time);
 		}
 	}
 }
