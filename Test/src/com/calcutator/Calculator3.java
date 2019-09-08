@@ -42,7 +42,7 @@ public class Calculator3 extends JFrame implements ActionListener  {
 	
 	public void setComponents()
 	{
-		border=BorderFactory.createLineBorder(Color.BLACK,2);
+		border=BorderFactory.createLineBorder(Color.MAGENTA,5);
 		font = new Font("Times New Roman", Font.BOLD, 25);
 		
 				
@@ -221,7 +221,7 @@ public class Calculator3 extends JFrame implements ActionListener  {
 	jf.setVisible(true);
 	jf.setTitle("Calculator");
 	jf.setResizable(false);
-	jf.getContentPane().setBackground(Color.BLUE);
+	jf.getContentPane().setBackground(Color.MAGENTA);
 	jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	
 

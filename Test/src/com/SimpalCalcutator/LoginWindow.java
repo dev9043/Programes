@@ -103,7 +103,7 @@ public void actionPerformed(ActionEvent e)
 	{
 	LoginWindow jf=new LoginWindow();
 	jf.setcomponents();
-	jf.getContentPane().setBackground(Color.LIGHT_GRAY);
+	jf.getContentPane().setBackground(Color.GREEN);
 	jf.setTitle("Calculater Window");
 	jf.setSize(1370,784);
 	jf.setVisible(true);

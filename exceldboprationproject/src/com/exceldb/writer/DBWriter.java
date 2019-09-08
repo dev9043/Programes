@@ -19,7 +19,7 @@ public class DBWriter implements Writer{
 		{
 			for(Student student : studentList)
 			{
-				System.out.println(student);
+				//System.out.println(student);
 				insertRecord(connetion,student);
 			}
 		}

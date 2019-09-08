@@ -2,6 +2,7 @@ package com.exceldb.reader;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -34,8 +35,8 @@ public class ExcelReader implements Reader{
        
         // Traversing over each row of XLSX file
        
-        Row header = rowIterator.next();
-        System.out.println(header.getCell(0).getStringCellValue()+"    "+header.getCell(1).getStringCellValue()+"    "+header.getCell(2).getStringCellValue()+"    "+header.getCell(3).getStringCellValue()+"    "+header.getCell(4).getStringCellValue()+"    "+header.getCell(5).getStringCellValue());
+       Row header = rowIterator.next();
+        //System.out.println(header.getCell(0).getStringCellValue()+"    "+header.getCell(1).getStringCellValue()+"    "+header.getCell(2).getStringCellValue()+"    "+header.getCell(3).getStringCellValue()+"    "+header.getCell(4).getStringCellValue()+"    "+header.getCell(5).getStringCellValue());
         while (rowIterator.hasNext()) {
         	Student student= new Student();
             Row row = rowIterator.next();
@@ -49,6 +50,12 @@ public class ExcelReader implements Reader{
         }
         myWorkBook.close();
     return studentList;
+    
 	}
 
+	@Override
+	public List<Student> read(Connection connetion) throws IOException 
+	{
+		return null;
+	}
 }
